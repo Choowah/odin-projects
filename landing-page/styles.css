@@ -1,0 +1,148 @@
+.myNav,
+#hero {
+    background-color: #1F2937;
+    margin: 0;
+}
+
+.myNav {
+    padding: 30px 16vw;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    margin-block-start: 0;
+    padding-inline-start: 0;
+    gap: 10px;
+}
+
+#logo {
+    margin-right: auto;
+}
+
+body {
+    margin: 0;
+    font-family: 'ROBOTO';
+}
+
+/* All sections' padding */
+#hero,
+#information,
+#quote {
+    padding: 60px 16vw;
+}
+
+#logo,
+#hero h1 {
+    color: #F9FAF8;
+}
+
+h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+#logo {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.links,
+.hero-text {
+    font-size: 18px;
+    color: #E5E7EB
+}
+
+#hero {
+    display: flex;
+}
+
+.hero-text,
+.hero-image {
+    flex: 1 1 200px;
+}
+
+.hero-image {
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-button {
+    background-color: #1DA1F2;
+    color:#E5E7EB;
+    padding: 8px 40px;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+}
+
+#information {
+    text-align: center;
+}
+
+#information div{
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.border {
+    height: 150px;
+    width: 150px;
+    border: 5px solid #1DA1F2;
+    border-radius: 20px;
+}
+
+#information h2 {
+    padding-bottom: 40px;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+#quote {
+    background-color: #E5E7EB;
+    font-style: italic;
+    font-weight: 100;
+    font-size: 36px;
+}
+
+#quote .signature {
+    font-weight: 600;
+    font-style: normal;
+    text-align: right;
+    font-size: 24px;
+}
+
+#callToAction {
+    display: flex;
+    padding: 5vh;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10vh 15vw;
+    background-color: #1DA1F2;
+    border-radius: 20px;
+    color: #F9FAF8;
+}
+
+.cta-button {
+    background-color: #1DA1F2;
+    color:#E5E7EB;
+    padding: 8px 40px;
+    border-radius: 8px;
+    border: 2px solid #E5E7EB;
+    font-weight: bold;
+}
+
+footer {
+    padding: 3vh;
+    text-align: center;
+    background-color: #1F2937;
+    color: #E5E7EB;
+}
