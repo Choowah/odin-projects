@@ -6,6 +6,8 @@
 let computerSignal
 let formattedPlayerChoice
 let result
+let playerScore = 0
+let computerScore = 0
 
 function getComputerChoice(){
     let computerChoice = Math.floor(Math.random()*3)
@@ -41,9 +43,11 @@ function compareChoices(formattedPlayerChoice,computerSignal){
             return result
         } else if (computerSignal === "paper"){
             result = "You lost!"
+            computerScore++;
             return result
         } else if (computerSignal === "scissors"){
             result = "You won!"
+            playerScore++;
             return result
         } else {
             result = "Issues with the computerSignal"
@@ -51,12 +55,14 @@ function compareChoices(formattedPlayerChoice,computerSignal){
     } else if (formattedPlayerChoice === "paper") {
         if (computerSignal === "rock") {
             result = "You won!"
+            playerScore++;
             return result
         } else if (computerSignal === "paper"){
             result = "It's a tie!"
             return result
         } else if (computerSignal === "scissors"){
             result = "You lost!"
+            computerScore++;
             return result
         } else {
             result = "Issues with the computerSignal"
@@ -64,9 +70,11 @@ function compareChoices(formattedPlayerChoice,computerSignal){
     } else if (formattedPlayerChoice === "scissors") {
         if (computerSignal === "rock") {
             result = "You lost!"
+            computerScore++;
             return result
         } else if (computerSignal === "paper"){
             result = "You won!"
+            playerScore++;
             return result
         } else if (computerSignal === "scissors"){
             result = "It's a tie!"
@@ -79,10 +87,21 @@ function compareChoices(formattedPlayerChoice,computerSignal){
     }
 }
 
-getComputerChoice();
-getPlayerChoice();
-compareChoices(formattedPlayerChoice,computerSignal);
+for (let i = 1; (playerScore < 5 && computerScore < 5); i++) {
+    getComputerChoice();
+    getPlayerChoice();
+    compareChoices(formattedPlayerChoice,computerSignal);
+    // Console.log result (player / computer win / draw)
 
-// Console.log result (player / computer win / draw)
+    let resultAlert = ("You chose: " + formattedPlayerChoice + "\nComputer chose: " + computerSignal + "\n" + result)
+    console.log(resultAlert);
+    console.log("Player Score: " + playerScore + " | Computer Score: " + computerScore);
+  }
 
-console.log("You chose: " + formattedPlayerChoice + "\nComputer chose: " + computerSignal + "\n" + result)
+if (playerScore === 5){
+    alert("Player won!")
+} else if (computerScore === 5){
+    alert("Computer won!")
+} else {
+    alert("Please debug")
+}
