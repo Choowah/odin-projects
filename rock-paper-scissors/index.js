@@ -61,6 +61,12 @@ function playerChoice(e){
     let computerScoreboard = document.querySelectorAll(".score")[2]
     computerScoreboard.textContent = computerScore
     }
+
+    if (playerScore === 5){
+        alert("Player Won!")
+    } else if (computerScore === 5){
+        alert ("Computer Won")
+    }
 }
 
 // Create function taking two argument and generate winner or draw
@@ -115,13 +121,5 @@ function compareChoices(playerSignal,computerSignal){
     }
 }
 
-// Alerting Winning Conditions
 
-// if (playerScore === 5){
-//     alert("Player won!")
-// } else if (computerScore === 5){
-//     alert("Computer won!")
-// } else {
-//     alert("Please debug")
-// }
 
