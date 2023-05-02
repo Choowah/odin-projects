@@ -34,11 +34,24 @@ scissors.addEventListener("click", playerChoice)
 
 let announcement = document.querySelector("p")
 
+// Create clicked animation
+
+let img = document.querySelectorAll("img");
+img.forEach(img => img.addEventListener("transitionend",removeTransition))
+
+function playAnimation(e){
+    e.target.classList.add("animated");
+}
+function removeTransition(e){
+    if(e.propertyName !== "scale") return;
+    e.target.classList.remove("animated")
+    console.log(e.target)
+}
+
 function playerChoice(e){
     if(e.target.parentElement.id === "rock" || e.target.parentElement.id === "paper" || e.target.parentElement.id === "scissors"){
-    console.log(e.target.parentElement.id)
     playerSignal = e.target.parentElement.id;
-
+    playAnimation(e);
     getComputerChoice();
     compareChoices(playerSignal,computerSignal);
 

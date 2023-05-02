@@ -38,4 +38,10 @@ img {
     height: 200px;
     width: 120px;
     margin: 2rem;
+    transition: all 0.1s;
+}
+
+.animated {
+    border-color: yellow;
+    scale: 1.1;
 }
