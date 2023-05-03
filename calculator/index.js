@@ -36,6 +36,7 @@ function operate(a,b,x){
 
     calc.textContent += " " + secondNumber;
     input.textContent = result;
+    displayValue = result;
 
     // console.log(firstNumber + " " + secondNumber + " " + operator)
     // console.log(`${operator}`(firstNumber,secondNumber));
@@ -43,6 +44,8 @@ function operate(a,b,x){
 
 let displayValue = "";
 
+const clear = document.querySelector("#clear")
+const del = document.querySelector("#delete")
 const one = document.querySelectorAll(".button")[10]
 const two = document.querySelectorAll(".button")[11]
 const three = document.querySelectorAll(".button")[12]
@@ -61,18 +64,40 @@ const divideButton = document.querySelectorAll(".button")[5]
 const equal = document.querySelectorAll(".button")[16]
 const input = document.querySelector(".input")
 const calc = document.querySelector(".calculating")
-const numbers = [one, two, three, four, five, six, seven, eight, nine, zero, decimal]
+const numbers = [one, two, three, four, five, six, seven, eight, nine, zero]
 const operators = [addButton, subtractButton, multiplyButton, divideButton]
 
 numbers.forEach(number => number.addEventListener("click", display))
 operators.forEach(operator => operator.addEventListener("click", operatorClick))
 equal.addEventListener("click",operate)
+clear.addEventListener("click",clearCalc)
+del.addEventListener("click",deleteLast)
+decimal.addEventListener("click", checkDecimal)
+
+function checkDecimal(){
+    if(displayValue.includes(".")){
+        return;
+    } else {
+        displayValue += ".";
+        input.textContent = displayValue;
+    }
+}
+
+function deleteLast(){
+    displayValue = displayValue.slice(0,-1);
+    input.textContent = displayValue;
+}
+
+function clearCalc(){
+    firstNumber = "";
+    secondNumber = "";
+    operator = "";
+    displayValue = "";
+    input.textContent = 0;
+    calc.textContent = 0;
+}
 
 function display(e){
-    if(displayValue.includes(".") && e.srcElement.textContent === "."){
-        console.log(e.srcElement.textContent)
-        displayValue = displayValue.slice(0,-1);
-    }
     displayValue += e.srcElement.textContent;
     input.textContent = displayValue;
 }
