@@ -1,0 +1,61 @@
+body {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+#calculatorBody {
+    display: flex;
+    height: 70dvh;
+    aspect-ratio: 0.7;
+    background-color: silver;
+    border-radius: 3dvh;
+    flex-direction: column;
+}
+
+#display {
+    background-color: lightgreen;
+    height: 10dvh;
+    width: 90%;
+    margin: 10% 5%;
+    border-radius: 2dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+.result {
+    height: 50%;
+    text-align: end;
+    margin: 15px 10px;
+}
+
+#clearDelete {
+    display: flex;
+}
+
+#clear, #delete {
+    height: 6dvh;
+    width: 50%;
+    background-color: white;
+    margin: auto 10%;
+}
+
+.button {
+    display: flex;
+    border-radius: 1dvh;
+    height: 6dvh;
+    width: 20%;
+    background-color: grey;
+    margin: 2% 5%;
+    align-items: center;
+    justify-content: center;
+}
+
+.button:hover{
+    cursor:pointer;
+}
+
+.numpad {
+    display: flex;
+    margin: 5%
+}
