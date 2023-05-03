@@ -1,0 +1,21 @@
+div {
+    border: 2px solid black;
+    height: 5dvh;
+    aspect-ratio: 1;
+}
+
+body {
+    display: flex;
+}
+
+#container {
+    border: none;
+}
+
+.colDiv {
+    display: flex;
+}
+
+.mouseover {
+    background-color: black;
+}
