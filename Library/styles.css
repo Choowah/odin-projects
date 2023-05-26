@@ -1,0 +1,152 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #E5F9DB;
+    height: calc(100vh - 5rem);
+    padding-bottom: 5rem;
+
+    display: grid;
+    justify-content: center;
+}
+
+#main-collection {
+    background-color: #A2A378;
+    /* height: */
+    width: 80vw;
+    margin: 5rem 0px;
+    padding: 20px;
+    border-radius: 10px;
+
+    display: grid;
+    align-content: start;
+    gap: 20px;
+}
+
+div .book {
+    background-color: #A0D8B3;
+    border-radius: 10px;
+    height: 10rem;
+    padding-left: 20px;
+
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+}
+
+p.title {
+    font-weight: bold;
+}
+
+p.author {
+    grid-row: 2 / 3;
+}
+
+p.pages {
+    grid-row: 3 / 4;
+}
+
+
+/* New Book Pop Up CSS */
+.popup {
+    position: absolute;
+    left: -150%;
+    top: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    background-color: #83764F;
+    width: 300px;
+    box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.15);
+    padding: 2rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.popup.active {
+    left: 50%;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.popup h2 {
+    text-align: center;
+}
+
+.popup .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #E5F9DB;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 1rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.popup .close-btn:hover {
+    background-color: rgb(255, 148, 148);
+    font-size: 18px;
+}
+
+.popup input[type = "text"],
+.popup input[type = "number"] {
+    display: block;
+    width: calc(100% - 20px);
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+.popup .form-element {
+    margin: 10px 0;
+}
+
+.popup button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: #A0D8B3;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.popup button:hover {
+    background-color: #4eee83;
+}
+
+/* New Book Button */
+.new-book {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 1rem;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    font-size: 1rem;
+    background-color: lightblue;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.new-book:hover {
+    background-color: lightgreen;
+}
+
+.new-book:active {
+    transform: scale(1.2);
+}
